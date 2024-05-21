@@ -1,5 +1,8 @@
 # Model maker
 
+## Info
+https://www.tensorflow.org/lite/models/modify/model_maker/image_classification
+
 ## Prerequisites
 * Python 3.9.13
 * pip 24.0

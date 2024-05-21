@@ -12,6 +12,9 @@ from tflite_model_maker.config import QuantizationConfig
 from tflite_model_maker.image_classifier import DataLoader
 
 import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.use('Qt5Agg')
 
 image_path = tf.keras.utils.get_file(
       'flower_photos.tgz',
@@ -34,8 +37,9 @@ plt.show()
 
 
 train_data, test_data = data.split(0.9)
-model = image_classifier.create(train_data)
-loss, accuracy = model.evaluate(test_data)
-model.export(export_dir='.')
+if False:
+    model = image_classifier.create(train_data)
+    loss, accuracy = model.evaluate(test_data)
+    model.export(export_dir='.')
 
 

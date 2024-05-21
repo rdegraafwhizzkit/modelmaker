@@ -3,3 +3,4 @@ tensorflow-datasets==4.8.3
 tflite-model-maker==0.3.2
 numpy==1.23.5
 matplotlib
+pyqt5
