@@ -1,46 +1,48 @@
 # Model maker
 
 ## Info
-https://www.tensorflow.org/lite/models/modify/model_maker/image_classification
+* https://coral.ai/docs/accelerator/get-started
+* https://coral.ai/docs/edgetpu/compiler/
+* https://www.tensorflow.org/lite/models/modify/model_maker/image_classification
 
-## Prerequisites / known good configurations
+## Prerequisites / known good configuration
 
-### Windows 
-* Windows 11
-* Python 3.9.13
-* pip 24.0
-* pip-tools 7.4.1
-
-### macOS
+* Docker Desktop 24.0.2
 * macOS Monterey 12.7.3
 * Python 3.9.6
 * pip 24.0
-* pip-tools 7.4.1 
-* brew install libusb
+* pip-tools 7.4.1
+* EdgeTPU runtime 20221024
+* libusb
 
 ## Prepare environment
+System stuff
 ```
+brew install libusb
 curl -LO https://github.com/google-coral/libedgetpu/releases/download/release-grouper/edgetpu_runtime_20221024.zip
 unzip edgetpu_runtime_20221024.zip
 cd edgetpu_runtime
 sudo bash install.sh
 rm -rf edgetpu_runtime*
 ```
-
+Virtual environment
 ```
+deactivate 2>&1 || :
+/usr/bin/python3 -m venv .venv
+. .venv/bin/activate
 pip install --upgrade pip==24.0
 pip install pip-tools
 pip-compile
 pip install --upgrade -r requirements.txt
 ```
 
-## Run
+## Train
 ```
 mkdir -p models
 python main.py
 ```
 
-## Compile
+## Compile to EdgeTPU
 Build Docker image
 ```
 cd docker
@@ -58,4 +60,9 @@ exit
 Delete Docker container (if still present)
 ```
 docker rm $(docker ps -a|grep 'Edge-TPU-Compiler'|awk '{print $1}')
+```
+
+## Inference
+```
+python inference.py
 ```
