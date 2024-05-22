@@ -39,7 +39,7 @@ pip install --upgrade -r requirements.txt
 ## Train
 ```
 mkdir -p models
-python main.py
+python train.py
 ```
 
 ## Compile to EdgeTPU
