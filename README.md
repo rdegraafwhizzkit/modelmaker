@@ -3,7 +3,8 @@
 ## Info
 https://www.tensorflow.org/lite/models/modify/model_maker/image_classification
 
-## Prerequisites
+## Prerequisites / known good configuration
+* Windows 11
 * Python 3.9.13
 * pip 24.0
 * pip-tools 7.4.1
