@@ -7,13 +7,13 @@
 
 ## Prerequisites / known good configuration
 
-* Docker Desktop 24.0.2
 * macOS Monterey 12.7.3
+* EdgeTPU runtime 20221024
+* libusb 1.0.27
+* Docker Desktop 24.0.2
 * Python 3.9.6
 * pip 24.0
 * pip-tools 7.4.1
-* EdgeTPU runtime 20221024
-* libusb
 
 ## Prepare environment
 System stuff
@@ -27,11 +27,12 @@ rm -rf edgetpu_runtime*
 ```
 Virtual environment
 ```
-deactivate 2>&1 || :
+deactivate > /dev/null 2>&1 || :
+rm -rf .venv
 /usr/bin/python3 -m venv .venv
 . .venv/bin/activate
 pip install --upgrade pip==24.0
-pip install pip-tools
+pip install --upgrade pip-tools==7.4.1
 pip-compile
 pip install --upgrade -r requirements.txt
 ```

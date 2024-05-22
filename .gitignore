@@ -1,3 +1,4 @@
 models/*
 .venv
 .idea
+requirements.txt
