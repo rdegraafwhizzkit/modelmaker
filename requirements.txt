@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+--extra-index-url https://google-coral.github.io/py-repo/
+
 absl-py==1.4.0
     # via
     #   neural-structured-learning
@@ -37,10 +39,6 @@ charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via tensorflow-datasets
-colorama==0.4.6
-    # via
-    #   click
-    #   tqdm
 contourpy==1.2.1
     # via matplotlib
 cycler==0.12.1
@@ -181,6 +179,7 @@ numpy==1.23.5
     #   opencv-python-headless
     #   opt-einsum
     #   pandas
+    #   pycoral
     #   scikit-learn
     #   scipy
     #   soxr
@@ -191,6 +190,7 @@ numpy==1.23.5
     #   tensorflow-model-optimization
     #   tf-models-official
     #   tflite-model-maker
+    #   tflite-runtime
     #   tflite-support
 oauthlib==3.2.2
     # via requests-oauthlib
@@ -211,6 +211,7 @@ pandas==2.2.2
 pillow==10.3.0
     # via
     #   matplotlib
+    #   pycoral
     #   tf-models-official
     #   tflite-model-maker
 platformdirs==4.2.2
@@ -247,6 +248,8 @@ pyasn1-modules==0.4.0
     # via google-auth
 pybind11==2.12.0
     # via tflite-support
+pycoral==2.0.0
+    # via -r requirements.in
 pycparser==2.22
     # via cffi
 pyparsing==3.1.2
@@ -371,6 +374,10 @@ tf-slim==1.1.0
     # via tf-models-official
 tflite-model-maker==0.3.2
     # via -r requirements.in
+tflite-runtime==2.5.0.post1
+    # via
+    #   -r requirements.in
+    #   pycoral
 tflite-support==0.4.1
     # via tflite-model-maker
 threadpoolctl==3.5.0

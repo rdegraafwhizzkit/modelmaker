@@ -1,6 +1,9 @@
 # Explicitly fixed versions for Python 3.9 on Windows
+--extra-index-url https://google-coral.github.io/py-repo/
 tensorflow-datasets==4.8.3
 tflite-model-maker==0.3.2
 numpy==1.23.5
 matplotlib
 pyqt5
+tflite_runtime
+pycoral~=2.0

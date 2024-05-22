@@ -20,6 +20,15 @@ https://www.tensorflow.org/lite/models/modify/model_maker/image_classification
 
 ## Prepare environment
 ```
+curl -LO https://github.com/google-coral/libedgetpu/releases/download/release-grouper/edgetpu_runtime_20221024.zip
+unzip edgetpu_runtime_20221024.zip
+cd edgetpu_runtime
+sudo bash install.sh
+rm -rf edgetpu_runtime*
+```
+
+```
+pip install --upgrade pip==24.0
 pip install pip-tools
 pip-compile
 pip install --upgrade -r requirements.txt
@@ -44,6 +53,7 @@ docker run --rm --interactive --tty --name Edge-TPU-Compiler --mount type=bind,s
 cd /models
 rm -f model_edgetpu.*
 edgetpu_compiler model.tflite
+exit
 ```
 Delete Docker container (if still present)
 ```
