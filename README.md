@@ -73,3 +73,7 @@ ZScaler issues:
 ```
 pip-compile --trusted-host pypi.org --trusted-host google-coral.github.io --trusted-host objects.githubusercontent.com
 ```
+WSL2 issue:
+```
+dockerd --iptables=false
+```
