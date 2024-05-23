@@ -1,6 +1,10 @@
 default:
-  use_edge_tpu: true
+  use_edgetpu: true
   libraries:
     linux: 'libedgetpu.so.1'
     darwin: 'libedgetpu.1.dylib'
     win32: 'edgetpu.dll'
+  model:
+    labels: models/labels.txt
+    regular: models/model.tflite
+    edgetpu: models/model_edgetpu.tflite
