@@ -67,3 +67,9 @@ docker rm $(docker ps -a|grep 'Edge-TPU-Compiler'|awk '{print $1}')
 ```
 python inference.py
 ```
+
+## Nuisances
+ZScaler issues:
+```
+pip-compile --trusted-host pypi.org --trusted-host google-coral.github.io --trusted-host objects.githubusercontent.com
+```

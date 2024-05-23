@@ -1,0 +1,6 @@
+default:
+  use_edge_tpu: true
+  libraries:
+    linux: 'libedgetpu.so.1'
+    darwin: 'libedgetpu.1.dylib'
+    win32: 'edgetpu.dll'

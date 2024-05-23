@@ -7,3 +7,4 @@ tflite-model-maker==0.3.2
 #pyqt5
 tflite_runtime
 pycoral~=2.0
+dynaconf

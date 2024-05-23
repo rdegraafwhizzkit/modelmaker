@@ -2,3 +2,4 @@ models/*
 .venv
 .idea
 requirements.txt
+settings.local.yaml
