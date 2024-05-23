@@ -46,6 +46,6 @@ common.set_input(interpreter, image)
 interpreter.invoke()
 
 info(f'Detected objects are:')
-classes = classify.get_classes(interpreter, top_k=1)
+classes = classify.get_classes(interpreter)#, top_k=1)
 for i, clazz in enumerate(classes):
     info(f'id: {i}, label: {labels.get(clazz.id)}, score: {clazz.score}')
