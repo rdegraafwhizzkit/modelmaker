@@ -8,3 +8,5 @@ tflite-model-maker==0.3.2
 tflite_runtime
 pycoral~=2.0
 dynaconf
+jax==0.4.21
+jaxlib==0.4.21

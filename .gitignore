@@ -3,3 +3,4 @@ models/*
 .idea
 requirements.txt
 settings.local.yaml
+data/

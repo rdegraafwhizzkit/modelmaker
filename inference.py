@@ -38,14 +38,19 @@ interpreter.allocate_tensors()
 
 info(f'Preparing input image')
 size = common.input_size(interpreter)
-image_file = f'{expanduser("~")}/.keras/datasets/flower_photos/daisy/102841525_bd6628ae3c.jpg'
+# image_file = f'{expanduser("~")}/.keras/datasets/flower_photos/daisy/102841525_bd6628ae3c.jpg'
+image_file = f'{expanduser("~")}/Downloads/Photos-001-2/IMG_20240523_201613.jpg'
+
 image = Image.open(image_file).convert('RGB').resize(size, Image.Resampling.LANCZOS)
 
-info(f'Inferencing')
-common.set_input(interpreter, image)
-interpreter.invoke()
+signature_fn = interpreter.get_signature_runner()
 
-info(f'Detected objects are:')
-classes = classify.get_classes(interpreter)#, top_k=1)
-for i, clazz in enumerate(classes):
-    info(f'id: {i}, label: {labels.get(clazz.id)}, score: {clazz.score}')
+
+# info(f'Inferencing')
+# common.set_input(interpreter, image)
+# interpreter.invoke()
+#
+# info(f'Detected objects are:')
+# classes = classify.get_classes(interpreter)#, top_k=1)
+# for i, clazz in enumerate(classes):
+#     info(f'id: {i}, label: {labels.get(clazz.id)}, score: {clazz.score}')
